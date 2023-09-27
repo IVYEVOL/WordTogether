@@ -1,0 +1,44 @@
+<!--index.wxml-->
+
+<!-- 记得改为!chosedBook_name -->
+
+
+
+
+<view class="bg5">
+  <view><text>正在学习：《{{team_book}}》</text></view>
+  <view class="mg"><text>进度:{{wordIndex + 1}}/{{team_info_task}}</text></view>
+</view>
+<view class="bg">
+  <!-- 单词 + 音标-->
+  <view class="text"><text>{{word_recite.headWord}}</text></view>
+  <view class="text2" bindtap="audio_play" data-src="http://dict.youdao.com/dictvoice?type=1&audio={{word_recite.headWord}}">
+    <text>英 [{{word_recite.content.word.content.ukphone}}]</text>
+    <image class="image" src="/static/tabbar/speaker.png"></image>
+  </view>
+</view>
+
+
+<!-- 释义-->
+<block>
+  <view hidden="{{!hidden}}">
+    <view class="bg6"></view>
+    <view wx:for="{{trans_list}}" class="bg4">
+      <text>{{item.pos}}.{{item.tranCn}};</text>
+    </view>
+  </view>
+
+</block>
+
+<block>
+  <view bindtap="tapedScreen" hidden="{{hidden}}" class="bg7">
+    <view class="huanhang">点击屏幕显示释义</view>
+  </view>
+</block>
+
+
+
+<view class="box">
+  <button class="button" bindtap="know"><text class="text3">认识</text></button>
+  <button class="button1" bindtap="foget"><text class="text3">忘记</text></button>
+</view>

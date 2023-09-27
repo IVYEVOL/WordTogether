@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/search/search",
+
+    "pages/review/review",
+    "pages/la/la",
+    "pages/home/home",
+    "pages/me/me",
+    "pages/friend/friend",
+    "pages/books/books",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "一起背单词",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8c8c8c",
+    "selectedColor": "#4768ff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "单词",
+        "iconPath": "static/tabbar/word.png",
+        "selectedIconPath": "static/tabbar/word2.png"
+      },
+      {
+        "pagePath": "pages/friend/friend",
+        "text": "好友圈",
+        "iconPath": "static/tabbar/friend.png",
+        "selectedIconPath": "static/tabbar/friend2.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "static/tabbar/safari.png",
+        "selectedIconPath": "static/tabbar/safari2.png"
+      }
+
+    ]
+
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

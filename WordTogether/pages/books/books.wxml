@@ -1,0 +1,20 @@
+<!--pages/books/books.wxml-->
+
+
+<view class="board_flex">
+
+  <view wx:for="{{allBooks}}" bindtap="chooseBook" data-id="{{item._id}}" class="board">
+    <view class="board1_flex">
+      <image mode="widthFix" src="{{item.imageUrl}}" class="image"></image>
+      <text class="text3">{{item.bookName}}</text>
+    </view>
+  </view>
+
+  <!-- <view class="board">
+    <view class="board1_flex">
+      <image mode="widthFix" src="/static/tabbar/IELTSluan_2.jpg" class="image"></image>
+      <text class="text3">雅思词汇</text>
+    </view>
+  </view> -->
+
+</view>

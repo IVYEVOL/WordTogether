@@ -1,0 +1,120 @@
+<block wx:if="{{!is_login}}">
+
+  <view class="nologin">
+    <text>登录后才可以使用好友圈功能哦~</text>
+  </view>
+
+</block>
+<block wx:else>
+  <view>
+    <image class='background' src="/static/tabbar/bgimage.png" mode="aspectFill"></image>
+
+    <view class="bg">
+      <view>
+        <image bindtap="showModal" class="profile" src="{{team_info.teamAvatarUrl}}"></image>
+      </view>
+      <view class="bg2">
+        <text bindtap="modalinput" data-teamid="{{team_info._id}}" class="text">{{team_info.teamName}}</text>
+        <view class="text2"><text> {{team_info.team_friend_sum}}伙伴 </text></view>
+      </view>
+    </view>
+
+    <view class="board">
+
+      <view class="board1">
+        <image class="image" src="/static/tabbar/task.png"></image>
+        <!-- 用户输入每日任务量 -->
+        <view class="gap4">
+          <text bindtap="modalinput2" data-teamid="{{team_info._id}}" class="text3">{{team_info.team_taskNumber}}</text>
+        </view>
+        <view class="gap5">
+          <text class="text3 textgap4">词/每天</text>
+        </view>
+      </view>
+      <view class="line">
+      </view>
+
+      <view class="board2" bindtap="clickBook">
+
+        <block wx:if="{{team_info.team_book}}">
+          <view>
+            <view class="gap6"><text class="text4">{{team_info.team_book}}</text></view>
+            <view class="gap7"><text class="textgap">{{team_book.sum}}词</text></view>
+          </view>
+        </block>
+        <block wx:else>
+          <text class="text6">点击选择词书</text>
+        </block>
+
+      </view>
+
+    </view>
+
+    <view>
+      <view class="whiteboard">
+        <view class="textgap3"><text class="text5">伙伴</text></view>
+        <view class="textgap2"><text class="text5">打卡</text></view>
+      </view>
+      <view class="line2">
+      </view>
+    </view>
+
+    <view wx:for="{{team_members}}" class="whiteboard2">
+      <view class="name">
+        <view class="itemimage">
+          <image class="name_profile" src="{{item.imageurl}}"></image>
+        </view>
+        <view class="itemname"><text>{{item.name}}</text></view>
+        <!-- <view class="itemname"> -->
+        <!-- </view> -->
+        <block wx:if="{{item.task_finished}}">
+          <view class="itemfinish"><text>已完成</text></view>
+
+          <!-- <view class="itemfinish"> -->
+          <!-- </view> -->
+        </block>
+        <block wx:else>
+          <view class="itemfinish"><text>未完成</text></view>
+          <!-- <view class="itemfinish"> -->
+          <!-- </view> -->
+        </block>
+
+      </view>
+    </view>
+    <view class="buttons">
+      <button bindtap='copyTeamId'><text>点我复制ID</text></button>
+      <button bindtap='createTeam'><text>创建小组</text> </button>
+      <button bindtap='joinTeam'><text>加入小组</text> </button>
+      <button bindtap='quitTeam'><text>退出小组</text> </button>
+    </view>
+
+  </view>
+
+  <!--关于头像 下拉model模块  -->
+  <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
+    <view class="modal-cancel" bindtap="hideModal"></view>
+    <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+      <!--  -->
+      <view class='Mselect'>
+        <view wx:for="{{optionList}}" wx:key="unique" data-value='{{item}}' bindtap='getOption'>
+          {{item}}
+        </view>
+      </view>
+      <view></view>
+      <view class='Mcancel' bindtap='mCancel'>
+        <text>取消</text>
+      </view>
+    </view>
+  </view>
+
+</block>
+
+<!-- 更改名字模态弹窗 -->
+<modal hidden="{{hiddenmodalput}}" title="更改小组名为" confirm-text="确定" cancel-text="取消" bindcancel="modalinput" bindconfirm="confirmName">
+  <input bindinput="toChangeName" type='text' placeholder="请输入新名称" auto-focus />
+</modal>
+
+<!-- 更改任务量模态弹窗 -->
+<modal hidden="{{hiddenmodalput2}}" title="更改每日任务量为" confirm-text="确定" cancel-text="取消" bindcancel="modalinput2" bindconfirm="confirmTaskNumber">
+  <input bindinput="toChangeTasknumber" type='text' placeholder="请输入任务量" auto-focus />
+</modal>

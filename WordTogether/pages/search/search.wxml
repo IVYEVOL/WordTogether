@@ -1,0 +1,20 @@
+<view class="searchplace">
+  <input class="searchinput" placeholder="请输入小组编号" bindinput="getSearch"></input>
+  <image class="searchicon" src="/static/tabbar/search.png" bindtap="goSearch"> </image>
+</view>
+
+<view class="board" hidden="{{!searchsuccess}}">
+  <view class="board_item">
+    <view class="gap"> 组名:</view>
+    <view class="gap2">{{searchteam.teamName}}</view>
+  </view>
+  <view class="board_item">
+    <view class="gap">词书:</view>
+    <view class="gap2">{{searchteam.team_book}}</view>
+  </view>
+  <view class="board_item">
+    <view class="gap">伙伴:</view>
+    <view class="gap2">{{searchteam.team_friend_sum}}</view> 
+  </view>
+ <button class="button" bindtap="jointeam"><text class="text">加入</text></button>
+</view>

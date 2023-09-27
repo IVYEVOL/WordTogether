@@ -1,0 +1,285 @@
+/* pages/friend/friend.wxss */
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+.profile {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-left: 15px;
+  border: 2px solid #ffffff;
+  box-shadow: 2px 2px 2px #888888;
+
+}
+
+page {
+  height: 100%;
+}
+
+.bg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bg2 {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.text2 {
+  border: 1px solid #ffffff;
+  margin-top: 20px;
+  height: 26px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 100rpx;
+  padding: 2rpx 10px 0rpx 10px;
+}
+
+.text3 {
+  color: #8c8c8c;
+}
+
+.text4 {
+  color: #000000;
+}
+
+.text5 {
+  color: #d8d8d8;
+  font-size: 20px;
+}
+
+.text6 {
+  color: #8c8c8c;
+  margin-left: 110px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 361px;
+  height: 120px;
+  background-color: #ffffff;
+  margin: 15px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgb(71, 104, 255, 0.1);
+  /* z-index: -1; */
+}
+
+.board1 {
+  margin-top: 25px;
+  margin-left: 18px;
+}
+
+.board2 {
+  margin-top: 15px;
+  margin-left: 20px;
+
+}
+
+.line {
+  background-color: #d8d8d8;
+  height: 1px;
+  width: 325px;
+  margin-top: 12px;
+  margin-left: 18px;
+}
+
+.line2 {
+  background-color: #d8d8d8;
+  height: 1px;
+  width: 350px;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.image {
+  vertical-align: middle;
+  height: 21px;
+  width: 40px;
+  display: inline-block;
+}
+
+.textgap {
+  color: #8c8c8c;
+  margin-left: 130px;
+}
+
+.textgap2 {
+  margin-left: 200px;
+}
+
+.textgap3 {
+  margin-left: 50px;
+}
+
+.textgap4 {
+  margin-left: 185px;
+}
+
+.whiteboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.gap{
+  margin-left: 33px;
+}
+
+.gap2{
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+.whiteboard2{
+  margin-top:10px;
+  margin-left: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.name{
+  font-size: 16px;
+  color: #000000;
+}
+
+.name_profile{
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.gap3{
+  margin-left: 162px;
+
+}
+.number_input{
+  height:15px;
+  display:inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 30px;
+}
+
+.arrow{
+  display:inline-block;
+  border:6px solid transparent;
+  border-top-color:#000;
+  margin-left:8px;
+  position:relative;
+  top:6rpx;
+}
+.itemimage{
+  display:inline-block;
+}
+
+.itemname{
+  display: inline-block;
+width: 200px;
+}
+.itemfinish{
+  display:inline-block;
+}
+/* ---------------------------- */
+/*模态框*/
+.modal{position:fixed; top:0; right:0; bottom:0; left:0; z-index:1000;}
+.modal-cancel{position:absolute; z-index:2000; top:0; right:0; bottom: 0; left:0; background:rgba(0,0,0,0.3);}
+.bottom-dialog-body{width:100%; position:absolute; z-index:3000; bottom:0; left:0;background:#dfdede;}
+/*动画前初始位置*/
+.bottom-positon{-webkit-transform:translateY(100%);transform:translateY(100%);}
+ 
+ 
+/* 底部弹出框 */
+.bottom-positon{
+  text-align: center;
+}
+.Mselect{
+  margin-bottom: 20rpx;
+}
+.Mselect view{
+  padding: 26rpx 0;
+  background: #fff;
+}
+.Mselect view:not(:last-of-type){
+  border-bottom: 1px solid #dfdede;
+}
+.Mcancel{
+  background: #fff;
+  padding: 26rpx 0;
+}
+
+.gap4{
+  width: 50px;
+  display: inline-block;
+
+}
+
+.gap5{
+/* margin-left: 10px; */
+display: inline-block;
+
+}
+
+.gap6{
+  width: 120px;
+  display: inline-block;
+
+}
+
+.gap7{
+  margin-left: 22px; 
+  display: inline-block;
+}
+
+.buttons{ 
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.buttons button{
+  margin-top: 20rpx;
+  width: 150px !important;
+  height: 30px;
+  background-color: #5ecdf0;
+  opacity: 0.5;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: center;
+  /* 水平居中 */
+}
+
+.buttons text{
+color: #ffffff;
+}
+
+.nologin{
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

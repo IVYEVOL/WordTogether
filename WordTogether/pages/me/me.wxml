@@ -1,0 +1,99 @@
+<view>
+  <!-- 默认背景 -->
+  <image class='background' src="/static/tabbar/meimage.jpg" mode="aspectFill"></image>
+
+  <!-- 未登录模块 -->
+  <view wx:if="{{!userInfo}}" class="bg">
+    <view>
+      <image class="profile" src="/static/tabbar/default_avatar.png" background-size="cover"></image>
+    </view>
+    <view bindtap="login" class="text">
+      <text>点击登录</text>
+    </view>
+  </view>
+
+  <!-- 已登录模块 -->
+  <view wx:else class="bg">
+    <view>
+      <image class="profile" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class="text">
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <block wx:if="{{!userInfo}}">
+  </block>
+  <block wx:else>
+    <view class="contentWarpper">
+      <!-- <view class="contentTitle">总览</view> -->
+      <view class="contentCard">
+        <view class="title">总览</view>
+        <view class="dataWrapper forAllData">
+          <view class="dataItem" hover-class="wasTaped" data-type="today" bindtap="getWordList">
+            <view class="dataName">
+              <view class="dot"></view>今日待学习
+            </view>
+            <view class="dataValue">{{tolearn}}<text class="unit">词</text></view>
+          </view>
+          <view class="dataItem" hover-class="wasTaped" data-type="getLearnedWord" bindtap="getWordList">
+            <view class="dataName">
+              <view class="dot"></view>今日已学习
+            </view>
+            <block wx:if="{{finished}}">
+              <view class="dataValue">{{tolearn}}<text class="unit">词</text></view>
+            </block>
+            <block wx:else>
+              <view class="dataValue">0<text class="unit">词</text></view>
+            </block>
+          </view>
+          <view class="dataItem" hover-class="wasTaped" data-type="getReviewWord" bindtap="getWordList">
+            <view class="dataName">
+              <view class="dot"></view>今日待复习
+            </view>
+
+            <view class="dataValue">{{count}}<text class="unit">词</text></view>
+          </view>
+          <view class="dataItem" hover-class="wasTaped" data-type="getMasteredWord" bindtap="getWordList">
+            <view class="dataName">
+              <view class="dot"></view>打卡情况
+            </view>
+            <block wx:if="{{finished}}">
+              <view class="dataValue"><text class="unit">已打卡</text></view>
+            </block>
+            <block wx:else>
+              <view class="dataValue"><text class="unit">未打卡</text></view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="echart">
+      <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}" force-use-old-canvas="true"></ec-canvas>
+    </view>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback" hover-class="wasTaped">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">意见反馈</text>
+      </button>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-creativefill text-orange"></text>
+        <text class="text-grey">在线客服</text>
+      </button>
+    </view>
+  </view>
+</block>
+
+  <!-- 注销 -->
+  <view>
+    <button wx:if="{{userInfo}}" bindtap="loginOut" class="button" role="button" aria-disabled="false">
+      <text class="text3">退出登录</text>
+    </button>
+  </view>
+
+</view>

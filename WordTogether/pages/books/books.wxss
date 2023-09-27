@@ -1,0 +1,37 @@
+/* pages/books/books.wxss */
+.board_flex{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start ;
+  margin: 15px;
+  flex-wrap: wrap;
+}
+
+.board1_flex{
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board1_flex text{
+  margin: 10rpx;
+}
+
+.board{
+  width: 150px;
+  height: 200px;
+  background-color: #ffffff;
+  margin: 15px;
+  border-radius: 10px 20px 20px 10px;
+  box-shadow: 5px 5px 15px  rgb(140, 140, 140, 0.4);
+}
+
+.image{
+  border-radius: 2px;
+  width: 200rpx;
+}
+
+.text3 {
+  color: #8c8c8c;
+}

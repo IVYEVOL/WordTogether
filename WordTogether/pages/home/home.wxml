@@ -1,0 +1,42 @@
+<!--pages/home/home.wxml-->
+
+<block wx:if="{{!is_login}}">
+  <view class="nologin">
+    <text>登录后才可以开始背单词哦~</text>
+  </view>
+</block>
+<block wx:else>
+  <view class="none">
+    <view>
+      <image class="noneimage" src="https://636c-cloud1-2g6712kfa7e060fe-1310140738.tcb.qcloud.la/none.jpg" mode="widthFix"></image>
+    </view>
+
+    <block wx:if="{{mestatus==true&&reviewfinished==true}}">
+      <view><text>恭喜完成今日所有学习！！！</text></view>
+    </block>
+    <block wx:elif="{{mestatus==true&&reviewfinished==false&&count!=0}}">
+      <view><text>快开始今天的复习任务吧~</text></view>
+    </block>
+    <block wx:if="{{mestatus==true&&reviewfinished==false&&count==0}}">
+      <view><text>恭喜完成今日所有学习！！！</text></view>
+    </block>
+    <block wx:elif="{{mestatus==false&&reviewfinished==true}}">
+      <view><text>快开始今天的学习任务吧~</text></view>
+    </block>
+    <block wx:elif="{{mestatus==false&&reviewfinished==false}}">
+      <view><text>今天还没有学习新知识哦~</text></view>
+    </block>
+
+
+
+  </view>
+  <view class="box">
+    <button class="button" bindtap="toLearnWord">
+      <text class="text3">今日学习</text>
+    </button>
+    <button class="button1" bindtap="toReviewWord">
+      <text class="text3">今日复习</text>
+    </button>
+  </view>
+
+</block>
